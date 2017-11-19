@@ -6,6 +6,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import portal.model.Alumno;
+import portal.model.Curso;
 import portal.service.AlumnoService;
 
 @Controller
@@ -39,6 +40,23 @@ public class AlumnoController {
     model.addAttribute("alumno", alumno);
     model.addAttribute("title", "Nuevo Alumno");
     return "alumno/editar";
+  }
+  
+  @RequestMapping("/initsearch")
+  public String iniciar() {
+    return "alumno/post";
+  }
+  
+  @RequestMapping("/inits")
+  public String iniciarBusqueda() {
+    return "alumno/cursem";
+  }
+  
+  @RequestMapping(value = "/infor", method = RequestMethod.POST)
+  public String buscarCurso(@ModelAttribute Alumno cursoChanged, ModelMap model){
+    Alumno talumno = alumnoService.getAlumnoName(cursoChanged.getNombres());
+    model.addAttribute("alumno", talumno);
+    return "alumno/alumno";
   }
 
   @RequestMapping(value = "/save", method = RequestMethod.POST)

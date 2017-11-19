@@ -49,7 +49,7 @@ la nota con la que el alumno aprueba o desaprueba dicho curso.
 * Permitir subir la nota de un alumno (require estar matriculado previamente en dicho curso).
 * Listar todos los cursos. +
 * Buscar un determinado curso dado su código. +
-* Buscar un determinado curso dado una parte de su nombre.
-* Buscar un alumno por su apellido paterno.
+* Buscar un determinado curso dado una parte de su nombre. -
+* Buscar un alumno por su apellido paterno. +
 * Listar los alumnos matriculados en un deteminado curso y semestre con sus respectivas notas.
 * Listar la jerarquía de cursos en forma de árbol de acuerdo a los prerequisitos.

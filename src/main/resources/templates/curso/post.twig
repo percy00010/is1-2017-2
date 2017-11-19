@@ -7,18 +7,19 @@
   <body>
    <form action="codigo" method="POST">
 	<table border="1">
-	  <tr>
-	    <th>Codigo:</th>
-
- {% if (alumno.codigo) %}
-	    <td><input name="codigo" value="{{curso.codigo}}" type="hidden" />{{curso.codigo}}</td>
- {% else %}
-	    <td><input name="codigo" /></td>
- {% endif %}
-	  </tr>
+	  <tr>	<th>Codigo:</th><td><input name="codigo" /></td>	</tr>
 	</table>
-    <br> <input type="submit" value="Buscar" />
-	<br> <input type="button" value="Atras" onclick="history.back();" />
+    <br> <input type="submit" value="Buscar Por Codigo]" />
    </form>
+   <br><br>
+   
+   <form action="nombre" method="POST">
+	<table border="1">
+	  <tr>	<th>Nombre:</th><td><input name="nombre" /></td>	</tr>
+	</table>
+    <br> <input type="submit" value="Buscar Por Nombre [Match]]" />
+   </form>
+   
+   <br> <input type="button" value="Atras" onclick="history.back();" />
   </body>
 </html>

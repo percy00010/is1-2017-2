@@ -19,6 +19,10 @@ public class AlumnoService {
   public Alumno getByCodigo(String codigo) {
     return repository.findOne(codigo);
   }
+  
+  public Alumno getAlumnoName(String name){
+	  return repository.findAlumnoName(name);
+  }
 
   public Alumno save(Alumno alumnoChanged) {
     System.out.println("Modificando: " + alumnoChanged.getCodigo());
@@ -30,7 +34,6 @@ public class AlumnoService {
     } else {
       alumno = alumnoChanged;
     }
-
     return repository.save(alumno);
   }
 }

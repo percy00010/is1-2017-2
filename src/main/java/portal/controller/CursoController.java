@@ -35,9 +35,16 @@ public class CursoController {
 	  }
 	  
 	  @RequestMapping(value = "/codigo", method = RequestMethod.POST)
-	  public String buscarCurso(@ModelAttribute Curso cursoChanged, ModelMap model) {
+	  public String buscarCurso(@ModelAttribute Curso cursoChanged, ModelMap model){
 	    Curso tcurso = cursoService.getCursoCodigo(cursoChanged.getCodigo());
 	    model.addAttribute("curso", tcurso);
 	    return "curso/buscar";
+	  }
+	  
+	  @RequestMapping(value = "/nombre", method = RequestMethod.POST)
+	  public String buscarMatch(@ModelAttribute Curso cursoChanged, ModelMap model){
+		  List<Curso> cursos = cursoService.getAll();
+		    model.addAttribute("cursos", cursos);
+	    return "curso/list";
 	  }
 }
