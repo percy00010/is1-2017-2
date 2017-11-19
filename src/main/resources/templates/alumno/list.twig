@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Listado de Alumnos</title>
+  </head>
+  <body>
+
+ {% if (message) %}
+ <div style="color: green; border: 1px solid green; margin-bottom:10px;">{{message}}</div>
+ {% endif %}
+
+	<table border="1">
+	  <tr>
+	    <th>C&oacute;digo</th>
+	    <th>Apellidos</th>
+	    <th>Nombres</th>
+	  </tr>
+
+{% for alumno in alumnos %}
+	  <tr>
+	    <td><a href="/alumno/{{alumno.codigo}}">{{alumno.codigo}}</a></td>
+	    <td>{{alumno.apellidoPaterno}} {{alumno.apellidoMaterno}}</td>
+	    <td>{{alumno.nombres}}</td>
+	  </tr>
+{% endfor %}
+	</table>
+	<br /> <a href="/alumno/new">Agregar Nuevo</a>
+	<br /> <input type="button" value="Atras" onclick="history.back();" />
+  </body>
+</html>

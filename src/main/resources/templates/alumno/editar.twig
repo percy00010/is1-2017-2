@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Datos del Alumno: {{fullName}}</title>
+  </head>
+  <body>
+   <form action="save" method="POST">
+	<table border="1">
+	  <tr>
+	    <th>C&oacute;digo:</th>
+
+ {% if (alumno.codigo) %}
+	    <td><input name="codigo" value="{{alumno.codigo}}" type="hidden" />{{alumno.codigo}}</td>
+ {% else %}
+	    <td><input name="codigo" /></td>
+ {% endif %}
+
+	  </tr>
+	  <tr>
+	    <th>Apellidos Paterno:</th>
+	    <td><input name="apellidoPaterno" value="{{alumno.apellidoPaterno}}" /></td>
+	  </tr>
+	  <tr>
+	    <th>Apellidos Paterno:</th>
+	    <td><input name="apellidoMaterno" value="{{alumno.apellidoMaterno}}" /></td>
+	  </tr>
+	  <tr>
+	    <th>Nombres:</th>
+	    <td><input name="nombres" value="{{alumno.nombres}}" /></td>
+	  </tr>
+	</table>
+    <br>
+	<input type="submit" value="Guardar" />
+	<input type="button" value="Atras" onclick="history.back();" />
+   </form>
+  </body>
+</html>

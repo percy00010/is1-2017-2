@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Buscar Curso</title>
+  </head>
+  <body>
+   <form action="codigo" method="POST">
+	<table border="1">
+	  <tr>
+	    <th>Codigo:</th>
+
+ {% if (alumno.codigo) %}
+	    <td><input name="codigo" value="{{curso.codigo}}" type="hidden" />{{curso.codigo}}</td>
+ {% else %}
+	    <td><input name="codigo" /></td>
+ {% endif %}
+	  </tr>
+	</table>
+    <br> <input type="submit" value="Buscar" />
+	<br> <input type="button" value="Atras" onclick="history.back();" />
+   </form>
+  </body>
+</html>
